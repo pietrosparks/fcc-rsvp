@@ -101,7 +101,7 @@
                 }).catch(err => {
                    
                     this.$toasted.error(err.response.data.message).goAway(5000);
-                    this.location =''
+                    
                 })
             },
             initAttendance() {
