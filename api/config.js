@@ -43,7 +43,7 @@ module.exports = (app, express) => {
     next();
   })
 
-  
+  app.use(serveStatic(__dirname + "../dist"));
   app.use('/api', api);
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -53,7 +53,7 @@ module.exports = (app, express) => {
     verbose: true
   }))
   app.use(logger('short'));
-    app.use(serveStatic(__dirname + "../dist"));
+
 
   //catch errors 
   app.use((req, res, next) => {
