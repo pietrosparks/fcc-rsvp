@@ -43,12 +43,12 @@ module.exports = (app, express) => {
     next();
   })
 
-  app.use(serveStatic(__dirname + "/../dist"));
-  app.use('/api', api);
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
     extended: false
   }))
+  app.use(serveStatic(__dirname + "/../dist"));
+  app.use('/api', api);
   app.use(history({
     verbose: true
   }))
